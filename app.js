@@ -1,5 +1,6 @@
 const express = require ("express")
 const livroRouter = require("./router/livro_router")
+const editoraRouter = require("./router/editora_router")
 const usuarioRouter = require('./router/usuario_router')
 const loginController = require("./controller/login_controller")
 
@@ -19,6 +20,8 @@ app.post("/api/login", loginController.realizarLogin)
 app.use("/api/usuarios", usuarioRouter);
 
 app.use("/api/livros", livroRouter);
+
+app.use("/api/editoras", editoraRouter);
 
 app.listen(port, () => {
     console.log(`API running on port ${port}`)

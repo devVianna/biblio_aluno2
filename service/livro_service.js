@@ -1,4 +1,4 @@
-const livroRepository = require("../repository/produto_repository")
+const livroRepository = require("../repository/livro_repository")
 
 async function listar() {
     return await livroRepository.listar();
@@ -28,16 +28,16 @@ async function buscarPorId(id) {
 }
 async function atualizar(id, livro) {
     if(livro && livro.nome && livro.editora && livro.autor) {
-        const produtoAtualizado = await livroRepository.atualizar(id, livro);
-        if(produtoAtualizado) {
-            return produtoAtualizado;
+        const livroAtualizado = await livroRepository.atualizar(id, livro);
+        if(livroAtualizado) {
+            return livroAtualizado;
         }        
         else {
-            throw {id:404, msg: "Produto não encontrado"};
+            throw {id:404, msg: "Livro não encontrado"};
         }
     }
     else {
-        throw {id:400, msg: "Produto sem dados corretos"};
+        throw {id:400, msg: "Livro sem dados corretos"};
     }
 }
 
