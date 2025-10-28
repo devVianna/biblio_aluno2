@@ -5,12 +5,10 @@ async function listar() {
 }
 
 async function inserir(livro) {
-    //Validar se livro tem nome e preço
-    if(livro && livro.nome && livro.autor){
+    if(livro && livro.nome && livro.autor && livro.ano){
         return await livroRepository.inserir(livro);
     }
     else {
-        //Erro
         throw { id: 400, msg: "Livro sem dados corretos"};
     }
 

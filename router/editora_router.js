@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const editoraController = require("../controller/livro_controller")
+const editoraController = require("../controller/editora_controller")
 
-//endpoint: /api/produtos
 router.get('/', editoraController.listar);
 router.post('/', editoraController.inserir);
 router.get('/:id', editoraController.buscarPorId);

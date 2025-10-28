@@ -5,12 +5,10 @@ async function listar() {
 }
 
 async function inserir(editora) {
-    //Validar se editora tem nome e preço
     if(editora && editora.nome && editora.cidade){
         return await editoraRepository.inserir(editora);
     }
     else {
-        //Erro
         throw { id: 400, msg: "Editora sem dados corretos"};
     }
 
@@ -23,7 +21,7 @@ async function buscarPorId(id) {
         return editora;
     }
     else {
-        throw { id: 404, msg: "Editora não encontrado!"};
+        throw { id: 404, msg: "Editora não encontrada!"};
     }
 }
 async function atualizar(id, editora) {
@@ -33,7 +31,7 @@ async function atualizar(id, editora) {
             return produtoAtualizado;
         }        
         else {
-            throw {id:404, msg: "Editora não encontrado"};
+            throw {id:404, msg: "Editora não encontrada"};
         }
     }
     else {
@@ -47,7 +45,7 @@ async function deletar(id) {
         return editora;
     }
     else {
-        throw { id: 404, msg: "Editora não encontrado!" }
+        throw { id: 404, msg: "Editora não encontrada!" }
     }
 }
 
