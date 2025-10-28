@@ -1,7 +1,7 @@
 const express = require ("express")
 const livroRouter = require("./router/livro_router")
 const editoraRouter = require("./router/editora_router")
-const usuarioRouter = require('./router/usuario_router')
+const usuarioRouter = require("./router/usuario_router")
 const loginController = require("./controller/login_controller")
 
 const app = express()
@@ -9,9 +9,9 @@ const port = 3000
 
 app.use(express.json())
 
-app.get("/", (req, res) =>{
+app.get('/', (req, res) =>{
     setTimeout(() => {
-        res.send("Hello World!")
+        res.send('Hello World!')
     }, 1000);
 })
 
